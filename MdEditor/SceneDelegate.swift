@@ -17,6 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		options connectionOptions: UIScene.ConnectionOptions
 	) {
 
-		/// guard let _ = (scene as? UIWindowScene) else { return }
+		guard let scene = (scene as? UIWindowScene) else { return }
+		let window = UIWindow(windowScene: scene)
+
+		window.rootViewController = assemblyStartViewController()
+		window.makeKeyAndVisible()
+
+		self.window = window
+	}
+
+	func assemblyStartViewController() -> UIViewController {
+
+		return StartAssembler().assembly()
 	}
 }
