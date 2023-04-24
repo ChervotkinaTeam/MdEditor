@@ -24,6 +24,13 @@ class StartViewController: UIViewController, IStartViewController {
 	private lazy var newDocumentButton: UIButton = makeNewDocumentButton(
 		accessibilityId: .newDocumentButton
 	)
+	private lazy var openDocumentButton: UIButton = makeOpenDocumentButton(
+		accessibilityId: .openDocumentButton
+	)
+	private lazy var aboutButton: UIButton = makeAboutDocumentButton(
+		accessibilityId: .aboutButton
+	)
+
 
 	var interactor: IStartInteractor?
 	var router: (NSObjectProtocol & IStartRouter & IStartDataPassing)?
@@ -95,6 +102,32 @@ private extension StartViewController {
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
 		button.configuration?.title = L10n.MenuButton.newDocument
+		button.configuration?.baseBackgroundColor = Theme.accentColor
+		button.accessibilityIdentifier = accessibilityId.rawValue
+		button.translatesAutoresizingMaskIntoConstraints = true
+
+		return button
+	}
+
+	func makeOpenDocumentButton(accessibilityId: AccessibilityIdentifier.StartViewController) -> UIButton {
+		let button = UIButton()
+
+		button.configuration = .filled()
+		button.configuration?.cornerStyle = .medium
+		button.configuration?.title = L10n.MenuButton.openDocument
+		button.configuration?.baseBackgroundColor = Theme.accentColor
+		button.accessibilityIdentifier = accessibilityId.rawValue
+		button.translatesAutoresizingMaskIntoConstraints = true
+
+		return button
+	}
+
+	func makeAboutDocumentButton(accessibilityId: AccessibilityIdentifier.StartViewController) -> UIButton {
+		let button = UIButton()
+
+		button.configuration = .filled()
+		button.configuration?.cornerStyle = .medium
+		button.configuration?.title = L10n.MenuButton.about
 		button.configuration?.baseBackgroundColor = Theme.accentColor
 		button.accessibilityIdentifier = accessibilityId.rawValue
 		button.translatesAutoresizingMaskIntoConstraints = true
