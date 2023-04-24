@@ -16,6 +16,15 @@ protocol IStartViewController: AnyObject {
 }
 
 class StartViewController: UIViewController, IStartViewController {
+
+	private lazy var recentFilesCollectionView: UICollectionView = makeCollectionView(
+		accessibilityId: .recentFilesCollectionView
+	)
+
+	private lazy var newDocumentButton: UIButton = makeNewDocumentButton(
+		accessibilityId: .newDocumentButton
+	)
+
 	var interactor: IStartInteractor?
 	var router: (NSObjectProtocol & IStartRouter & IStartDataPassing)?
 
@@ -31,7 +40,7 @@ class StartViewController: UIViewController, IStartViewController {
 		setup()
 	}
 
-	// MARK: Setup
+	// MARK: - Setup
 
 	private func setup() {
 		let viewController = self
@@ -44,7 +53,7 @@ class StartViewController: UIViewController, IStartViewController {
 		router.dataStore = interactor
 	}
 
-	// MARK: Routing
+	// MARK: - Routing
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let scene = segue.identifier {
@@ -55,7 +64,7 @@ class StartViewController: UIViewController, IStartViewController {
 		}
 	}
 
-	// MARK: View lifecycle
+	// MARK: - View lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -70,6 +79,29 @@ class StartViewController: UIViewController, IStartViewController {
 
 	func render(viewModel: StartModels.ViewModel) {
 		// nameTextField.text = viewModel.name
+	}
+}
+
+// MARK: - Private extension
+private extension StartViewController {
+
+	func makeCollectionView(accessibilityId: AccessibilityIdentifier.StartViewController) -> UICollectionView {
+		return UICollectionView()
+	}
+
+	func makeNewDocumentButton(accessibilityId: AccessibilityIdentifier.StartViewController) -> UIButton {
+		let button = UIButton()
+
+		// button.configuration = .filled()
+		// button.configuration?.cornerStyle = .medium
+//		button.configuration?.title = L10n. Authorization.toLogin
+//		button.configuration?.baseBackgroundColor = Theme.accentColor
+//
+//		button.addTarget(self, action: #selector(login), for: .touchUpInside)
+		button.accessibilityIdentifier = accessibilityId.rawValue
+		button.translatesAutoresizingMaskIntoConstraints = true
+
+		return button
 	}
 }
 

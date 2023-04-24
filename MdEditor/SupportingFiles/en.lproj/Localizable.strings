@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MdEditor
+
+  Created by Коломенский Александр on 19.04.2023.
+  
+*/
+
+/// MARK: - Start
+"MenuButton.newDocument" = "New document";
+"MenuButton.openDocument" = "Open document";
+"MenuButton.about" = "About";
