@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import PinLayout
+#if DEBUG
+import SwiftUI
+#endif
 
 protocol IStartViewController: AnyObject {
-	func displaySomething(viewModel: StartModels.Something.ViewModel)
+	func render(viewModel: StartModels.ViewModel)
 }
 
 class StartViewController: UIViewController, IStartViewController {
@@ -60,11 +64,22 @@ class StartViewController: UIViewController, IStartViewController {
 	}
 
 	func doSomething() {
-		let request = StartModels.Something.Request()
+		let request = StartModels.Request()
 		interactor?.doSomething(request: request)
 	}
 
-	func displaySomething(viewModel: StartModels.Something.ViewModel) {
+	func render(viewModel: StartModels.ViewModel) {
 		// nameTextField.text = viewModel.name
 	}
 }
+
+// MARK: - Preview
+#if DEBUG
+struct StartViewControllerProvider: PreviewProvider {
+	static var previews: some View {
+		Group {
+			StartViewController().preview()
+		}
+	}
+}
+#endif

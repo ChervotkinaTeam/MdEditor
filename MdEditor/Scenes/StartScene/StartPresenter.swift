@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IStartPresenter {
-	func present(response: StartModels.Something.Response)
+	func present(response: StartModels.Response)
 }
 
 class StartPresenter: IStartPresenter {
@@ -18,8 +18,8 @@ class StartPresenter: IStartPresenter {
 		self.viewController = viewController
 	}
 
-	func present(response: StartModels.Something.Response) {
-		let viewModel = StartModels.Something.ViewModel()
-		viewController?.displaySomething(viewModel: viewModel)
+	func present(response: StartModels.Response) {
+		let viewModel = StartModels.ViewModel()
+		viewController?.render(viewModel: viewModel)
 	}
 }

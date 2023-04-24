@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IStartInteractor {
-	func doSomething(request: StartModels.Something.Request)
+	func doSomething(request: StartModels.Request)
 }
 
 protocol IStartDataStore {
@@ -23,11 +23,11 @@ class StartInteractor: IStartInteractor, IStartDataStore {
 		self.presenter = presenter
 	}
 
-	func doSomething(request: StartModels.Something.Request) {
+	func doSomething(request: StartModels.Request) {
 		worker = StartWorker()
 		worker?.doSomeWork()
 
-		let response = StartModels.Something.Response()
+		let response = StartModels.Response()
 		presenter?.present(response: response)
 	}
 }

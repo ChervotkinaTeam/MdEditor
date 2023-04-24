@@ -8,14 +8,10 @@
 import UIKit
 
 enum StartModels {
-	// MARK: Use cases
-
-	enum Something {
-		struct Request {
-		}
-		struct Response {
-		}
-		struct ViewModel {
-		}
+	struct Request {
+	}
+	struct Response {
+	}
+	struct ViewModel {
 	}
 }
