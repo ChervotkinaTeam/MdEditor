@@ -92,12 +92,10 @@ private extension StartViewController {
 	func makeNewDocumentButton(accessibilityId: AccessibilityIdentifier.StartViewController) -> UIButton {
 		let button = UIButton()
 
-		// button.configuration = .filled()
-		// button.configuration?.cornerStyle = .medium
-//		button.configuration?.title = L10n. Authorization.toLogin
-//		button.configuration?.baseBackgroundColor = Theme.accentColor
-//
-//		button.addTarget(self, action: #selector(login), for: .touchUpInside)
+		button.configuration = .filled()
+		button.configuration?.cornerStyle = .medium
+		button.configuration?.title = L10n.MenuButton.newDocument
+		button.configuration?.baseBackgroundColor = Theme.accentColor
 		button.accessibilityIdentifier = accessibilityId.rawValue
 		button.translatesAutoresizingMaskIntoConstraints = true
 

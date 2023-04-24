@@ -26,6 +26,9 @@
 		20F837A229F6DBFB005022B0 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837A129F6DBFB005022B0 /* AccessibilityIdentifier.swift */; };
 		20F837A529F6E11D005022B0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837A329F6E11C005022B0 /* Strings.swift */; };
 		20F837A629F6E11D005022B0 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837A429F6E11C005022B0 /* Assets.swift */; };
+		20F837A929F6E1F8005022B0 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837A829F6E1F8005022B0 /* Colours.swift */; };
+		20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */; };
+		20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		20F837A129F6DBFB005022B0 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		20F837A329F6E11C005022B0 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		20F837A429F6E11C005022B0 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		20F837A829F6E1F8005022B0 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 				200956BE29EFF6A000C7A354 /* README.md */,
 				2018736629F124EE0074A0EE /* Assets */,
 				200956B429EFF37700C7A354 /* SupportingFiles */,
+				20F837A729F6E1D4005022B0 /* Theme */,
 				2009569E29EFE0FE00C7A354 /* AppDelegate.swift */,
 				200956A029EFE0FE00C7A354 /* SceneDelegate.swift */,
 			);
@@ -150,9 +157,19 @@
 		20F8379E29F6D62A005022B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */,
+				20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */,
 				20F8379F29F6D64A005022B0 /* UIViewController+Preview.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20F837A729F6E1D4005022B0 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				20F837A829F6E1F8005022B0 /* Colours.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F8379629F191F8005022B0 /* StartModels.swift in Sources */,
+				20F837A929F6E1F8005022B0 /* Colours.swift in Sources */,
 				20F8379829F191F8005022B0 /* StartInteractor.swift in Sources */,
 				20F8379729F191F8005022B0 /* StartViewController.swift in Sources */,
 				20F8379529F191F8005022B0 /* StartRouter.swift in Sources */,
@@ -287,9 +305,11 @@
 				2009569F29EFE0FE00C7A354 /* AppDelegate.swift in Sources */,
 				200956A129EFE0FE00C7A354 /* SceneDelegate.swift in Sources */,
 				20F837A029F6D64A005022B0 /* UIViewController+Preview.swift in Sources */,
+				20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */,
 				20F837A629F6E11D005022B0 /* Assets.swift in Sources */,
 				20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */,
 				20F8379A29F19434005022B0 /* StartAssembler.swift in Sources */,
+				20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */,
 				20F837A529F6E11D005022B0 /* Strings.swift in Sources */,
 				20F837A229F6DBFB005022B0 /* AccessibilityIdentifier.swift in Sources */,
 			);
@@ -451,6 +471,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,6 +501,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
