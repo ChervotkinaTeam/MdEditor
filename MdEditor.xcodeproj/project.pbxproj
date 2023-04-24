@@ -29,6 +29,7 @@
 		20F837A929F6E1F8005022B0 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837A829F6E1F8005022B0 /* Colours.swift */; };
 		20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */; };
 		20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */; };
+		20F837AF29F6E3E9005022B0 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AE29F6E3E9005022B0 /* Sizes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		20F837A829F6E1F8005022B0 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
+		20F837AE29F6E3E9005022B0 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				20F837A829F6E1F8005022B0 /* Colours.swift */,
+				20F837AE29F6E3E9005022B0 /* Sizes.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				20F837A629F6E11D005022B0 /* Assets.swift in Sources */,
 				20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */,
 				20F8379A29F19434005022B0 /* StartAssembler.swift in Sources */,
+				20F837AF29F6E3E9005022B0 /* Sizes.swift in Sources */,
 				20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */,
 				20F837A529F6E11D005022B0 /* Strings.swift in Sources */,
 				20F837A229F6DBFB005022B0 /* AccessibilityIdentifier.swift in Sources */,
