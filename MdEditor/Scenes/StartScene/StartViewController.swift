@@ -31,7 +31,6 @@ class StartViewController: UIViewController, IStartViewController {
 		accessibilityId: .aboutButton
 	)
 
-
 	var interactor: IStartInteractor?
 	var router: (NSObjectProtocol & IStartRouter & IStartDataPassing)?
 
@@ -45,6 +44,16 @@ class StartViewController: UIViewController, IStartViewController {
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setup()
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setupUI()
+	}
+
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		layout()
 	}
 
 	// MARK: - Setup
@@ -71,19 +80,6 @@ class StartViewController: UIViewController, IStartViewController {
 		}
 	}
 
-	// MARK: - View lifecycle
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		view.backgroundColor = .purple
-		doSomething()
-	}
-
-	func doSomething() {
-		let request = StartModels.Request()
-		interactor?.doSomething(request: request)
-	}
-
 	func render(viewModel: StartModels.ViewModel) {
 		// nameTextField.text = viewModel.name
 	}
@@ -92,8 +88,55 @@ class StartViewController: UIViewController, IStartViewController {
 // MARK: - Private extension
 private extension StartViewController {
 
+	func setupUI() {
+		view.backgroundColor = Theme.backgroundColor
+	}
+
+	func layout() {
+		[
+			recentFilesCollectionView,
+			newDocumentButton,
+			openDocumentButton,
+			aboutButton
+		].forEach { view.addSubview($0) }
+
+		layoutConstraints()
+	}
+
+	func layoutConstraints() {
+		recentFilesCollectionView.pin
+			.top(Sizes.PercentOfScreen.firstHalf)
+			.horizontally(view.pin.readableMargins + Sizes.Padding.double)
+			.minHeight(Sizes.L.height)
+
+		newDocumentButton.pin
+			.below(of: recentFilesCollectionView, aligned: .center)
+			.width(Sizes.L.width)
+			.height(Sizes.L.height)
+			.margin(Sizes.Padding.double)
+
+		openDocumentButton.pin
+			.below(of: newDocumentButton, aligned: .center)
+			.width(Sizes.L.width)
+			.height(Sizes.L.height)
+			.margin(Sizes.Padding.double)
+
+		aboutButton.pin
+			.below(of: openDocumentButton, aligned: .center)
+			.width(Sizes.L.width)
+			.height(Sizes.L.height)
+			.margin(Sizes.Padding.double)
+	}
 	func makeCollectionView(accessibilityId: AccessibilityIdentifier.StartViewController) -> UICollectionView {
-		return UICollectionView()
+
+		let collectionView = UICollectionView(
+			frame: .zero,
+			collectionViewLayout: UICollectionViewFlowLayout()
+		)
+		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.backgroundColor = UIColor.cyan
+		return collectionView
 	}
 
 	func makeNewDocumentButton(accessibilityId: AccessibilityIdentifier.StartViewController) -> UIButton {

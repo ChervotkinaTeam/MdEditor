@@ -30,6 +30,7 @@
 		20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */; };
 		20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */; };
 		20F837AF29F6E3E9005022B0 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837AE29F6E3E9005022B0 /* Sizes.swift */; };
+		20F837B229F6E6CE005022B0 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F837B129F6E6CE005022B0 /* StartCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		20F837AA29F6E25B005022B0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		20F837AB29F6E25B005022B0 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
 		20F837AE29F6E3E9005022B0 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		20F837B129F6E6CE005022B0 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		20F8376729F1880A005022B0 /* StartScene */ = {
 			isa = PBXGroup;
 			children = (
+				20F837B029F6E6A3005022B0 /* Cells */,
 				20F8378D29F191F8005022B0 /* StartPresenter.swift */,
 				20F8378E29F191F8005022B0 /* StartWorker.swift */,
 				20F8378F29F191F8005022B0 /* StartRouter.swift */,
@@ -173,6 +176,14 @@
 				20F837AE29F6E3E9005022B0 /* Sizes.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		20F837B029F6E6A3005022B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20F837B129F6E6CE005022B0 /* StartCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				20F837A629F6E11D005022B0 /* Assets.swift in Sources */,
 				20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */,
 				20F8379A29F19434005022B0 /* StartAssembler.swift in Sources */,
+				20F837B229F6E6CE005022B0 /* StartCollectionViewCell.swift in Sources */,
 				20F837AF29F6E3E9005022B0 /* Sizes.swift in Sources */,
 				20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */,
 				20F837A529F6E11D005022B0 /* Strings.swift in Sources */,

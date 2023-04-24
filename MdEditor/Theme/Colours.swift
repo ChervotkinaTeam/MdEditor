@@ -73,4 +73,3 @@ enum Theme {
 	static let black = Colors.black
 	static let red = Colors.red
 }
-
