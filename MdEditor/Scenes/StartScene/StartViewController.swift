@@ -85,6 +85,39 @@ class StartViewController: UIViewController, IStartViewController {
 	}
 }
 
+// MARK: - StartViewController extension
+extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 4
+	}
+
+	func collectionView(
+		_ collectionView: UICollectionView,
+		cellForItemAt indexPath: IndexPath
+	) -> UICollectionViewCell {
+		guard let cell = collectionView.dequeueReusableCell(
+			withReuseIdentifier: StartCollectionViewCell.reuseIdentifier,
+			for: indexPath
+		) as? StartCollectionViewCell else { return UICollectionViewCell() }
+
+		cell.accessibilityIdentifier = AccessibilityIdentifier.StartViewController.recentFilesCollectionViewCell.rawValue
+		return cell
+	}
+}
+
+// MARK: - StartViewController extension
+extension StartViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(
+		_ collectionView: UICollectionView,
+		layout collectionViewLayout: UICollectionViewLayout,
+		sizeForItemAt indexPath: IndexPath
+	) -> CGSize {
+		let width = view.frame.width / 4
+		let height = CGFloat(200)
+		return CGSize(width: width, height: height)
+	}
+}
+
 // MARK: - Private extension
 private extension StartViewController {
 
@@ -106,8 +139,8 @@ private extension StartViewController {
 	func layoutConstraints() {
 		recentFilesCollectionView.pin
 			.top(view.pin.safeArea)
-			.horizontally(view.pin.readableMargins + Sizes.Padding.double)
-			.minHeight(Sizes.L.height)
+			.horizontally(view.pin.readableMargins)
+			.minHeight(300.0)
 
 		newDocumentButton.pin
 			.below(of: recentFilesCollectionView, aligned: .center)
@@ -129,13 +162,27 @@ private extension StartViewController {
 	}
 	func makeCollectionView(accessibilityId: AccessibilityIdentifier.StartViewController) -> UICollectionView {
 
+		let collectionViewFlowLayout = UICollectionViewFlowLayout()
+		collectionViewFlowLayout.scrollDirection = .horizontal
 		let collectionView = UICollectionView(
 			frame: .zero,
-			collectionViewLayout: UICollectionViewFlowLayout()
+			collectionViewLayout: collectionViewFlowLayout
 		)
-		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+		collectionView.register(
+			StartCollectionViewCell.self,
+			forCellWithReuseIdentifier: StartCollectionViewCell.reuseIdentifier
+		)
+
+		collectionView.contentInset = UIEdgeInsets(
+			top: .zero,
+			left: Sizes.Padding.half,
+			bottom: .zero,
+			right: Sizes.Padding.half
+		)
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.backgroundColor = UIColor.cyan
+		collectionView.dataSource = self
+		collectionView.delegate = self
 		return collectionView
 	}
 
