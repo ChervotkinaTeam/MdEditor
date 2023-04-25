@@ -105,7 +105,7 @@ private extension StartViewController {
 
 	func layoutConstraints() {
 		recentFilesCollectionView.pin
-			.top(Sizes.PercentOfScreen.firstHalf)
+			.top(view.pin.safeArea)
 			.horizontally(view.pin.readableMargins + Sizes.Padding.double)
 			.minHeight(Sizes.L.height)
 
