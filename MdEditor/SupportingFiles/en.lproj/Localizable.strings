@@ -6,7 +6,11 @@
   
 */
 
-/// MARK: - Start
-"MenuButton.newDocument" = "New document";
-"MenuButton.openDocument" = "Open document";
-"MenuButton.about" = "About";
+/// MARK: - Document
+
+"Document.Action.newDocument" = "New document";
+"Document.Action.openDocument" = "Open document";
+
+/// MARK: - App
+
+"App.about" = "About";

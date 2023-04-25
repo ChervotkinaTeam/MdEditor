@@ -144,7 +144,7 @@ private extension StartViewController {
 
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
-		button.configuration?.title = L10n.MenuButton.newDocument
+		button.configuration?.title = L10n.Document.Action.newDocument
 		button.configuration?.baseBackgroundColor = Theme.accentColor
 		button.accessibilityIdentifier = accessibilityId.rawValue
 		button.translatesAutoresizingMaskIntoConstraints = true
@@ -157,7 +157,7 @@ private extension StartViewController {
 
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
-		button.configuration?.title = L10n.MenuButton.openDocument
+		button.configuration?.title = L10n.Document.Action.openDocument
 		button.configuration?.baseBackgroundColor = Theme.accentColor
 		button.accessibilityIdentifier = accessibilityId.rawValue
 		button.translatesAutoresizingMaskIntoConstraints = true
@@ -170,7 +170,7 @@ private extension StartViewController {
 
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
-		button.configuration?.title = L10n.MenuButton.about
+		button.configuration?.title = L10n.App.about
 		button.configuration?.baseBackgroundColor = Theme.accentColor
 		button.accessibilityIdentifier = accessibilityId.rawValue
 		button.translatesAutoresizingMaskIntoConstraints = true

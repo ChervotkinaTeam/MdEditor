@@ -6,13 +6,19 @@ import Foundation
 
 internal enum L10n {
 
-  internal enum MenuButton {
+  internal enum App {
     /// About
-    internal static let about = L10n.tr("Localizable", "MenuButton.about")
-    /// New document
-    internal static let newDocument = L10n.tr("Localizable", "MenuButton.newDocument")
-    /// Open document
-    internal static let openDocument = L10n.tr("Localizable", "MenuButton.openDocument")
+    internal static let about = L10n.tr("Localizable", "App.about")
+  }
+
+  internal enum Document {
+
+    internal enum Action {
+      /// New document
+      internal static let newDocument = L10n.tr("Localizable", "Document.Action.newDocument")
+      /// Open document
+      internal static let openDocument = L10n.tr("Localizable", "Document.Action.openDocument")
+    }
   }
 }
 
