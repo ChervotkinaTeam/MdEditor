@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  MdEditor
+
+  Created by Коломенский Александр on 19.04.2023.
+  
+*/
+
+/// MARK: - Document
+
+"Document.Action.newDocument" = "New document";
+"Document.Action.openDocument" = "Open document";
+
+/// MARK: - App
+
+"App.about" = "About";
