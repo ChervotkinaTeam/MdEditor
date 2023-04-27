@@ -7,8 +7,34 @@
 
 import Foundation
 
+protocol File {
+
+	/// URL файла.
+	var url: URL
+
+	/// Является ли файл директорией.
+	var isDirectory: Bool { get set }
+
+	/// Имя файла.
+	var name: String { get set }
+
+	/// Расширение файла.
+	var ext: String { get set }
+
+	/// Размер файла.
+	var size: UInt64 { get set }
+
+	/// Дата создания файла.
+	var creationDate: Date { get set }
+
+	/// Дата последнего изменения файла.
+	var modificationDate: Date { get set }
+}
+
 /// Class Файл.
-class File {
+final class File {
+
+	private let fileManager = FileManager.default
 
 	/// URL файла.
 	var url: URL
@@ -35,7 +61,7 @@ class File {
 
 	init(url: URL) {
 		self.url = url
-		attributes = try? FileManager.default.attributesOfItem(atPath: url.absoluteString)
+		attributes = try? fileManager.attributesOfItem(atPath: url.relativePath)
 	}
 
 	private func getFileSize() -> UInt64 {
@@ -52,7 +78,7 @@ class File {
 
 	private func isDir() -> Bool {
 		var isDir: ObjCBool = false
-		FileManager.default.fileExists(atPath: url.absoluteString, isDirectory: &isDir)
+		fileManager.fileExists(atPath: url.absoluteString, isDirectory: &isDir)
 		return isDir.boolValue
 	}
 }
