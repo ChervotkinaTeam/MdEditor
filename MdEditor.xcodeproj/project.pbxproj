@@ -19,7 +19,7 @@
 		2032F1E629FAB4C2005A9562 /* IFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1E529FAB4C2005A9562 /* IFileManager.swift */; };
 		2032F1E829FAB9E4005A9562 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1E729FAB9E4005A9562 /* MDFileManager.swift */; };
 		2032F1F029FAD0BF005A9562 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1EF29FAD0BF005A9562 /* FileTests.swift */; };
-		2032F1F729FADFF1005A9562 /* MdFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1F629FADFF1005A9562 /* MdFileManager.swift */; };
+		2032F1F729FADFF1005A9562 /* MdFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1F629FADFF1005A9562 /* MdFileManagerTests.swift */; };
 		20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8378D29F191F8005022B0 /* StartPresenter.swift */; };
 		20F8379529F191F8005022B0 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8378F29F191F8005022B0 /* StartRouter.swift */; };
 		20F8379629F191F8005022B0 /* StartModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379029F191F8005022B0 /* StartModels.swift */; };
@@ -65,7 +65,7 @@
 		2032F1E729FAB9E4005A9562 /* MDFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
 		2032F1ED29FAD0BF005A9562 /* MdEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MdEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032F1EF29FAD0BF005A9562 /* FileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTests.swift; sourceTree = "<group>"; };
-		2032F1F629FADFF1005A9562 /* MdFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdFileManager.swift; sourceTree = "<group>"; };
+		2032F1F629FADFF1005A9562 /* MdFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdFileManagerTests.swift; sourceTree = "<group>"; };
 		20F8378D29F191F8005022B0 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		20F8378F29F191F8005022B0 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		20F8379029F191F8005022B0 /* StartModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModels.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		2032F1EE29FAD0BF005A9562 /* MdEditorTests */ = {
 			isa = PBXGroup;
 			children = (
-				2032F1F629FADFF1005A9562 /* MdFileManager.swift */,
+				2032F1F629FADFF1005A9562 /* MdFileManagerTests.swift */,
 				2032F1EF29FAD0BF005A9562 /* FileTests.swift */,
 			);
 			path = MdEditorTests;
@@ -418,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2032F1F729FADFF1005A9562 /* MdFileManager.swift in Sources */,
+				2032F1F729FADFF1005A9562 /* MdFileManagerTests.swift in Sources */,
 				2032F1F029FAD0BF005A9562 /* FileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
