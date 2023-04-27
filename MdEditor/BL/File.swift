@@ -7,37 +7,38 @@
 
 import Foundation
 
-protocol File {
+/// Протокол описывающий свойства файла.
+protocol IFile {
 
 	/// URL файла.
-	var url: URL
+	var url: URL { get }
 
 	/// Является ли файл директорией.
-	var isDirectory: Bool { get set }
+	var isDirectory: Bool { get }
 
 	/// Имя файла.
-	var name: String { get set }
+	var name: String { get }
 
 	/// Расширение файла.
-	var ext: String { get set }
+	var ext: String { get }
 
 	/// Размер файла.
-	var size: UInt64 { get set }
+	var size: UInt64 { get }
 
 	/// Дата создания файла.
-	var creationDate: Date { get set }
+	var creationDate: Date { get }
 
 	/// Дата последнего изменения файла.
-	var modificationDate: Date { get set }
+	var modificationDate: Date { get }
 }
 
 /// Class Файл.
-final class File {
+final class File: IFile {
 
 	private let fileManager = FileManager.default
 
 	/// URL файла.
-	var url: URL
+	private (set) var url: URL
 
 	/// Является ли файл директорией.
 	var isDirectory: Bool { isDir() }
