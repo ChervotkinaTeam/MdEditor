@@ -54,7 +54,7 @@ final class File: IFile {
 
 	private func isDir() -> Bool {
 		var isDir: ObjCBool = false
-		fileManager.fileExists(atPath: url.absoluteString, isDirectory: &isDir)
+		fileManager.fileExists(atPath: url.relativePath, isDirectory: &isDir)
 		return isDir.boolValue
 	}
 }
