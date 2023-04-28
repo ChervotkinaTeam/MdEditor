@@ -8,7 +8,7 @@
 import Foundation
 
 /// Class Файл.
-final class File: IFile {
+final class File {
 
 	private let fileManager = FileManager.default
 
@@ -56,5 +56,11 @@ final class File: IFile {
 		var isDir: ObjCBool = false
 		fileManager.fileExists(atPath: url.relativePath, isDirectory: &isDir)
 		return isDir.boolValue
+	}
+}
+
+extension File: Equatable {
+	public static func == (lhs: File, rhs: File) -> Bool {
+		lhs.url.relativePath == rhs.url.relativePath
 	}
 }

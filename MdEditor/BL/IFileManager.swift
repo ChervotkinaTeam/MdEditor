@@ -13,25 +13,24 @@ protocol IFileManager {
 	/// Возвращает список всего содержимого URL.
 	/// - Parameter url: путь
 	/// - Returns: массив файлов содержащихся по пути URL
-	func contentsOfDirectory(at url: URL) -> [IFile]
+	func contentsOfDirectory(at url: URL) -> [File]
 
 	/// Создание нового файла по пути URL.
 	/// - Parameters:
 	///   - url: путь
 	///   - fileName: имя нового файла
-	///   - ext: расширение файла
-	func createNewFile(at url: URL, fileName: String, ext: String) throws
+	func createNewFile(at url: URL, fileName: String) throws
 
 	/// Открыть и получить содержимое файла
 	/// - Parameter file: IFile
 	/// - Returns: содержимое файла Data
-	func contentsOf(file: IFile) -> String
+	func contentsOf(file: File) -> String
 
 	/// Запись данных в файл
 	/// - Parameters:
 	///   - file: IFile
 	///   - data: данные для записи 
-	func write(file: IFile, data: String) throws
+	func write(file: File, data: String) throws
 
 	/// Создать новый каталог
 	/// - Parameters:

@@ -15,8 +15,8 @@ final class MDFileManager: IFileManager {
 	/// Возвращает список всего содержимого URL.
 	/// - Parameter url: путь
 	/// - Returns: массив файлов содержащихся по пути URL
-	func contentsOfDirectory(at url: URL) -> [IFile] {
-		var fileList = [IFile]()
+	func contentsOfDirectory(at url: URL) -> [File] {
+		var fileList = [File]()
 
 		guard let items = try? fileManager.contentsOfDirectory(atPath: url.relativePath) else {
 			return fileList
@@ -34,17 +34,16 @@ final class MDFileManager: IFileManager {
 	/// - Parameters:
 	///   - url: путь
 	///   - fileName: имя нового файла
-	///   - ext: расширение файла
-	func createNewFile(at url: URL, fileName: String, ext: String) throws {
+	func createNewFile(at url: URL, fileName: String) throws {
 		var urlWithFileName = url
-		urlWithFileName.appendPathComponent("\(fileName).\(ext)")
+		urlWithFileName.appendPathComponent("\(fileName)")
 		try "".write(to: urlWithFileName, atomically: true, encoding: fileEncoding)
 	}
 
 	/// Открыть и получить содержимое файла
 	/// - Parameter file: IFile
 	/// - Returns: содержимое файла Data
-	func contentsOf(file: IFile) -> String {
+	func contentsOf(file: File) -> String {
 		if let text = try? String(contentsOfFile: file.url.relativePath, encoding: fileEncoding) {
 			return text
 		} else {
@@ -56,7 +55,7 @@ final class MDFileManager: IFileManager {
 	/// - Parameters:
 	///   - file: IFile
 	///   - data: данные для записи
-	func write(file: IFile, data: String) throws {
+	func write(file: File, data: String) throws {
 		try data.write(to: file.url, atomically: true, encoding: fileEncoding)
 	}
 
@@ -65,6 +64,6 @@ final class MDFileManager: IFileManager {
 	///   - url: путь где будет создан новый каталог
 	///   - name: имя каталога
 	func createFolder(at url: URL, withName name: String) throws {
-		try fileManager.createDirectory(at: url, withIntermediateDirectories: false)
+		try fileManager.createDirectory(at: url.appendingPathComponent(name), withIntermediateDirectories: false)
 	}
 }

@@ -93,15 +93,13 @@ final class FileTests: XCTestCase {
 // MARK: - Private
 
 private extension FileTests {
-	private func makeDirSUT() -> IFile {
+	private func makeDirSUT() -> File {
 		let url = Bundle.main.bundleURL
 		return File(url: url)
 	}
 
-	private func makeFileSUT() -> IFile {
+	private func makeFileSUT() -> File {
 		let url = Bundle.main.bundleURL
 		return File(url: url.appendingPathComponent(fileName))
 	}
-
 }
-
