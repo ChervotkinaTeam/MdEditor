@@ -17,6 +17,8 @@ protocol IStartViewController: AnyObject {
 
 class StartViewController: UIViewController, IStartViewController {
 
+	private var viewModel: StartModels.ViewModel = StartModels.ViewModel(recentFileData: [])
+
 	private lazy var recentFilesCollectionView: UICollectionView = makeCollectionView(
 		accessibilityId: .recentFilesCollectionView
 	)
@@ -48,6 +50,7 @@ class StartViewController: UIViewController, IStartViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupUI()
+		interactor?.fetchRecentFileData()
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -65,14 +68,15 @@ class StartViewController: UIViewController, IStartViewController {
 	}
 
 	func render(viewModel: StartModels.ViewModel) {
-		// nameTextField.text = viewModel.name
+		self.viewModel = viewModel
+		recentFilesCollectionView.reloadData()
 	}
 }
 
 // MARK: - StartViewController extension
 extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 4
+		viewModel.recentFileData.count
 	}
 
 	func collectionView(
@@ -84,6 +88,7 @@ extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSou
 			for: indexPath
 		) as? StartCollectionViewCell else { return UICollectionViewCell() }
 
+		cell.configure(text: viewModel.recentFileData[indexPath.row])
 		cell.accessibilityIdentifier = AccessibilityIdentifier.StartViewController.recentFilesCollectionViewCell.rawValue
 		return cell
 	}

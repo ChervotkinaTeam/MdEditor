@@ -67,3 +67,24 @@ final class MDFileManager: IFileManager {
 		try fileManager.createDirectory(at: url.appendingPathComponent(name), withIntermediateDirectories: false)
 	}
 }
+
+extension MDFileManager {
+	func getRecentFilesUrls() -> [URL] {
+		let examplesUrl = getExamplesUrl()
+
+		return [
+			examplesUrl.appendingPathComponent("MdEditor.md"),
+			examplesUrl.appendingPathComponent("TodoList.md")
+		]
+	}
+
+	/// URL  к папке документы
+	func getDocumentsUrl() -> URL {
+		FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[.zero]
+	}
+
+	func getExamplesUrl() -> URL {
+		guard let resourceUrl = Bundle.main.resourceURL else { return getDocumentsUrl() }
+		return resourceUrl.appendingPathComponent(Const.Paths.examples)
+	}
+}
