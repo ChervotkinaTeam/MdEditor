@@ -19,19 +19,19 @@ protocol IStartDataStore {
 }
 
 class StartInteractor: IStartInteractor, IStartDataStore {
-
+	private let fileManager: IFileManager
 	private var presenter: IStartPresenter
 
-	internal init(presenter: IStartPresenter) {
+	internal init(presenter: IStartPresenter, fileManager: IFileManager) {
 		self.presenter = presenter
+		self.fileManager = fileManager
 	}
 
 	func fetchRecentFileData() {
-		let mdFileManager = MDFileManager()
 		var recentFilesData = [String]()
-		let recentFilesUrls = mdFileManager.getRecentFilesUrls()
+		let recentFilesUrls = fileManager.getRecentFilesUrls()
 		recentFilesUrls.forEach { url in
-			let text = mdFileManager.contentsOf(file: File(url: url))
+			let text = fileManager.contentsOf(file: File(url: url))
 			if text != "" {
 				recentFilesData.append(text)
 			}

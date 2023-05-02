@@ -12,8 +12,10 @@ final class StartAssembler {
 
 		let viewController = StartViewController()
 
+		let mdFileManager = MDFileManager()
+
 		let presenter = StartPresenter(viewController: viewController)
-		let interactor = StartInteractor(presenter: presenter)
+		let interactor = StartInteractor(presenter: presenter, fileManager: mdFileManager)
 		viewController.interactor = interactor
 
 		return viewController

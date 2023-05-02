@@ -37,15 +37,12 @@ class StartViewController: UIViewController, IStartViewController {
 
 	// MARK: Object lifecycle
 
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-		setup()
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		setup()
-	}
+//	private func setup() {
+//		let viewController = self
+//		let presenter = StartPresenter(viewController: viewController)
+//		let interactor = StartInteractor(presenter: presenter)
+//		viewController.interactor = interactor
+//	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -56,15 +53,6 @@ class StartViewController: UIViewController, IStartViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		layout()
-	}
-
-	// MARK: - Setup
-
-	private func setup() {
-		let viewController = self
-		let presenter = StartPresenter(viewController: viewController)
-		let interactor = StartInteractor(presenter: presenter)
-		viewController.interactor = interactor
 	}
 
 	func render(viewModel: StartModels.ViewModel) {
