@@ -37,13 +37,6 @@ class StartViewController: UIViewController, IStartViewController {
 
 	// MARK: Object lifecycle
 
-//	private func setup() {
-//		let viewController = self
-//		let presenter = StartPresenter(viewController: viewController)
-//		let interactor = StartInteractor(presenter: presenter)
-//		viewController.interactor = interactor
-//	}
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupUI()
