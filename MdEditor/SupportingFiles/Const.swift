@@ -12,4 +12,9 @@ enum Const {
 		static let examples: String = "Examples"
 		static let forTestsReadOnly: String = "ForTests"
 	}
+
+	enum FileManager {
+		static let maxCountRecentFiles = 5
+		static let RecentFilesUrlKey = "RecentFilesUrl"
+	}
 }
