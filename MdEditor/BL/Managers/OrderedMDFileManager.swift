@@ -51,7 +51,7 @@ final class OrderedMDFileManager: IFileManager {
 	}
 
 	private func sorted(files: [File]) -> [File] {
-		var sortedFiles = files
+		let sortedFiles = files
 			.filter { !$0.isDirectory }
 			.sorted { $0.name > $1.name }
 		var sortedDirectories = files

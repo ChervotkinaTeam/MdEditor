@@ -83,7 +83,7 @@ extension StartViewController: UICollectionViewDelegateFlowLayout {
 		sizeForItemAt indexPath: IndexPath
 	) -> CGSize {
 		let width = view.frame.width / 4
-		let height = CGFloat(200)
+		let height = Const.recentFileCellPreviewHeight
 		return CGSize(width: width, height: height)
 	}
 }
@@ -110,7 +110,7 @@ private extension StartViewController {
 		recentFilesCollectionView.pin
 			.top(view.pin.safeArea)
 			.horizontally(view.pin.readableMargins)
-			.minHeight(300.0)
+			.minHeight(Const.recentFileCollectionPreviewHeight)
 
 		newDocumentButton.pin
 			.below(of: recentFilesCollectionView, aligned: .center)

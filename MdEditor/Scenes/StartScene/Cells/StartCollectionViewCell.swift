@@ -52,7 +52,7 @@ private extension StartCollectionViewCell {
 
 		label.numberOfLines = 0
 		label.textColor = Theme.black
-		label.font = UIFont.systemFont(ofSize: 10)
+		label.font = UIFont.systemFont(ofSize: Const.recentFilePreviewFontSize)
 		label.adjustsFontForContentSizeCategory = true
 
 		return label

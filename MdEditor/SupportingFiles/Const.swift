@@ -17,4 +17,8 @@ enum Const {
 		static let maxCountRecentFiles = 5
 		static let RecentFilesUrlKey = "RecentFilesUrl"
 	}
+
+	static let recentFilePreviewFontSize: CGFloat = 10.0
+	static let recentFileCellPreviewHeight: CGFloat = 150.0
+	static let recentFileCollectionPreviewHeight: CGFloat = 180.0
 }
