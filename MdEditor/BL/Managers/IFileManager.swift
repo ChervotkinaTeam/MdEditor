@@ -37,4 +37,16 @@ protocol IFileManager {
 	///   - url: путь где будет создан новый каталог
 	///   - name: имя каталога
 	func createFolder(at url: URL, withName name: String) throws
+
+	/// Возвращает список URL недавно открытых файлов
+	func getRecentFilesUrls() -> [URL]
+
+	/// Функция добавляет URL в список URL недавно открытых файлов
+	func addToRecentFilesUrl(url: URL)
+
+	/// URL  к папке Documents
+	func getDocumentsUrl() -> URL
+
+	/// URL  к папке Examples
+	func getExamplesUrl() -> URL
 }

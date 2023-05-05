@@ -8,10 +8,15 @@
 import UIKit
 
 enum StartModels {
-	struct Request {
+	enum Request {
+		struct RecentFileSelected {
+			let recentFileSelectedUrl: URL
+		}
 	}
 	struct Response {
+		let fetchRecentFileData: [String]
 	}
 	struct ViewModel {
+		let recentFileData: [String]
 	}
 }

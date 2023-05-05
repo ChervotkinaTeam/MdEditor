@@ -22,8 +22,8 @@
 		2032F1FB29FBCC24005A9562 /* File+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1FA29FBCC24005A9562 /* File+CustomStringConvertible.swift */; };
 		2032F1FD29FBFD0D005A9562 /* ForTests in Resources */ = {isa = PBXBuildFile; fileRef = 2032F1FC29FBFD0D005A9562 /* ForTests */; };
 		2032F1FF29FBFD61005A9562 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1FE29FBFD61005A9562 /* Const.swift */; };
+		204CBD402A01737D00BF412F /* OrderedMDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD3F2A01737D00BF412F /* OrderedMDFileManager.swift */; };
 		20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8378D29F191F8005022B0 /* StartPresenter.swift */; };
-		20F8379529F191F8005022B0 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8378F29F191F8005022B0 /* StartRouter.swift */; };
 		20F8379629F191F8005022B0 /* StartModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379029F191F8005022B0 /* StartModels.swift */; };
 		20F8379729F191F8005022B0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379129F191F8005022B0 /* StartViewController.swift */; };
 		20F8379829F191F8005022B0 /* StartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379229F191F8005022B0 /* StartInteractor.swift */; };
@@ -70,8 +70,8 @@
 		2032F1FA29FBCC24005A9562 /* File+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		2032F1FC29FBFD0D005A9562 /* ForTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ForTests; sourceTree = "<group>"; };
 		2032F1FE29FBFD61005A9562 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		204CBD3F2A01737D00BF412F /* OrderedMDFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMDFileManager.swift; sourceTree = "<group>"; };
 		20F8378D29F191F8005022B0 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
-		20F8378F29F191F8005022B0 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		20F8379029F191F8005022B0 /* StartModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModels.swift; sourceTree = "<group>"; };
 		20F8379129F191F8005022B0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		20F8379229F191F8005022B0 /* StartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInteractor.swift; sourceTree = "<group>"; };
@@ -182,6 +182,16 @@
 			path = MdEditorTests;
 			sourceTree = "<group>";
 		};
+		204CBD3E2A016D2D00BF412F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2032F1E529FAB4C2005A9562 /* IFileManager.swift */,
+				2032F1E729FAB9E4005A9562 /* MDFileManager.swift */,
+				204CBD3F2A01737D00BF412F /* OrderedMDFileManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		20F8376629F187F1005022B0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +205,6 @@
 			children = (
 				20F837B029F6E6A3005022B0 /* Cells */,
 				20F8378D29F191F8005022B0 /* StartPresenter.swift */,
-				20F8378F29F191F8005022B0 /* StartRouter.swift */,
 				20F8379029F191F8005022B0 /* StartModels.swift */,
 				20F8379129F191F8005022B0 /* StartViewController.swift */,
 				20F8379229F191F8005022B0 /* StartInteractor.swift */,
@@ -235,9 +244,8 @@
 		20F837B329F827C1005022B0 /* BL */ = {
 			isa = PBXGroup;
 			children = (
+				204CBD3E2A016D2D00BF412F /* Managers */,
 				20F837B429F827ED005022B0 /* File.swift */,
-				2032F1E529FAB4C2005A9562 /* IFileManager.swift */,
-				2032F1E729FAB9E4005A9562 /* MDFileManager.swift */,
 			);
 			path = BL;
 			sourceTree = "<group>";
@@ -402,12 +410,12 @@
 				20F8379829F191F8005022B0 /* StartInteractor.swift in Sources */,
 				20F8379729F191F8005022B0 /* StartViewController.swift in Sources */,
 				2032F1FF29FBFD61005A9562 /* Const.swift in Sources */,
-				20F8379529F191F8005022B0 /* StartRouter.swift in Sources */,
 				2032F1E629FAB4C2005A9562 /* IFileManager.swift in Sources */,
 				2009569F29EFE0FE00C7A354 /* AppDelegate.swift in Sources */,
 				2032F1FB29FBCC24005A9562 /* File+CustomStringConvertible.swift in Sources */,
 				200956A129EFE0FE00C7A354 /* SceneDelegate.swift in Sources */,
 				20F837A029F6D64A005022B0 /* UIViewController+Preview.swift in Sources */,
+				204CBD402A01737D00BF412F /* OrderedMDFileManager.swift in Sources */,
 				2032F1E829FAB9E4005A9562 /* MDFileManager.swift in Sources */,
 				20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */,
 				20F837A629F6E11D005022B0 /* Assets.swift in Sources */,

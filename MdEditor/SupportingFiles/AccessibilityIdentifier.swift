@@ -15,5 +15,6 @@ enum AccessibilityIdentifier {
 		case openDocumentButton
 		case newDocumentButton
 		case aboutButton
+		case recentFilesCollectionViewCell
 	}
 }

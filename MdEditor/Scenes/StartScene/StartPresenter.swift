@@ -19,7 +19,7 @@ class StartPresenter: IStartPresenter {
 	}
 
 	func present(response: StartModels.Response) {
-		let viewModel = StartModels.ViewModel()
+		let viewModel = StartModels.ViewModel(recentFileData: response.fetchRecentFileData)
 		viewController?.render(viewModel: viewModel)
 	}
 }
