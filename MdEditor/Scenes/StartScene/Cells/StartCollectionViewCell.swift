@@ -27,7 +27,7 @@ class StartCollectionViewCell: UICollectionViewCell {
 		super.layoutSubviews()
 		layout()
 
-		backgroundColor = .blue
+		backgroundColor = Theme.mainColor
 	}
 
 	func configure(text: String) {

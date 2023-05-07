@@ -15,7 +15,8 @@ enum Const {
 
 	enum FileManager {
 		static let maxCountRecentFiles = 5
-		static let RecentFilesUrlKey = "RecentFilesUrl"
+		static let recentFilesUrlKey = "RecentFilesUrl"
+		static let markDownFileExtension = "md"
 	}
 
 	static let recentFilePreviewFontSize: CGFloat = 10.0

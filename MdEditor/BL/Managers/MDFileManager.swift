@@ -71,7 +71,7 @@ final class MDFileManager: IFileManager {
 	func getRecentFilesUrls() -> [URL] {
 		let defaults = UserDefaults.standard
 		var recentFilesUrl = [URL]()
-		let recentFilesStringUrl = defaults.stringArray(forKey: Const.FileManager.RecentFilesUrlKey) ?? [String]()
+		let recentFilesStringUrl = defaults.stringArray(forKey: Const.FileManager.recentFilesUrlKey) ?? [String]()
 		recentFilesStringUrl.forEach { stringUrl in
 			if let url = URL(string: stringUrl) {
 				recentFilesUrl.append(url)
@@ -83,12 +83,12 @@ final class MDFileManager: IFileManager {
 	/// Функция добавляет URL в список URL недавно открытых файлов
 	func addToRecentFilesUrl(url: URL) {
 		let defaults = UserDefaults.standard
-		var recentFilesUrl = defaults.stringArray(forKey: Const.FileManager.RecentFilesUrlKey) ?? [String]()
+		var recentFilesUrl = defaults.stringArray(forKey: Const.FileManager.recentFilesUrlKey) ?? [String]()
 		if recentFilesUrl.count >= Const.FileManager.maxCountRecentFiles {
 			recentFilesUrl.removeLast()
 		}
 		recentFilesUrl.insert(url.relativePath, at: 0)
-		defaults.set(recentFilesUrl, forKey: Const.FileManager.RecentFilesUrlKey)
+		defaults.set(recentFilesUrl, forKey: Const.FileManager.recentFilesUrlKey)
 	}
 
 	/// URL  к папке Documents
