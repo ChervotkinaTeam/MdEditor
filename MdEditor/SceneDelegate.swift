@@ -27,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 
 	func assemblyStartViewController() -> UIViewController {
-
 		return StartAssembler().assembly()
 	}
 }

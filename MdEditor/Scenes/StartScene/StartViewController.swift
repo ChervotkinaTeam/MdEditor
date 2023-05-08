@@ -93,6 +93,11 @@ private extension StartViewController {
 
 	func setupUI() {
 		view.backgroundColor = Theme.backgroundColor
+		openDocumentButton.addTarget(self, action: #selector(openDocumentAction), for: .touchUpInside)
+	}
+
+	@objc func openDocumentAction() {
+		interactor?.openDocumentAction()
 	}
 
 	func layout() {
@@ -150,7 +155,7 @@ private extension StartViewController {
 			right: Sizes.Padding.half
 		)
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView.backgroundColor = UIColor.cyan
+		collectionView.backgroundColor = Theme.white
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		return collectionView

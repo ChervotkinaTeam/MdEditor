@@ -43,11 +43,19 @@ internal struct ColorAsset {
 
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal enum Files {
+    internal static let docMD = ImageAsset(name: "docMD")
+    internal static let docUnknown = ImageAsset(name: "docUnknown")
+    internal static let folder = ImageAsset(name: "folder")
+  }
 
   internal static let allColors: [ColorAsset] = [
     accentColor,
   ]
   internal static let allImages: [ImageAsset] = [
+    Files.docMD,
+    Files.docUnknown,
+    Files.folder,
   ]
   @available(*, deprecated, renamed: "allImages")
   internal static let allValues: [AssetType] = allImages

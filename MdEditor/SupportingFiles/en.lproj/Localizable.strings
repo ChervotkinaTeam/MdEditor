@@ -14,3 +14,7 @@
 /// MARK: - App
 
 "App.about" = "About";
+
+/// Files
+
+"Files.dateFormat" = "yyyy.MM.dd HH:m:ss";

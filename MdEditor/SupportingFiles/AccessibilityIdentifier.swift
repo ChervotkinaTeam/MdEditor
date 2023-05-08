@@ -17,4 +17,9 @@ enum AccessibilityIdentifier {
 		case aboutButton
 		case recentFilesCollectionViewCell
 	}
+
+	// MARK: - OpenDocumentViewController
+	enum OpenDocumentViewController: String {
+		case filesExplorerTableView
+	}
 }

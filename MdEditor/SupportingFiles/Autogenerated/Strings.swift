@@ -20,6 +20,11 @@ internal enum L10n {
       internal static let openDocument = L10n.tr("Localizable", "Document.Action.openDocument")
     }
   }
+
+  internal enum Files {
+    /// yyyy.MM.dd HH:m:ss
+    internal static let dateFormat = L10n.tr("Localizable", "Files.dateFormat")
+  }
 }
 
 extension L10n {

@@ -23,6 +23,12 @@
 		2032F1FD29FBFD0D005A9562 /* ForTests in Resources */ = {isa = PBXBuildFile; fileRef = 2032F1FC29FBFD0D005A9562 /* ForTests */; };
 		2032F1FF29FBFD61005A9562 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032F1FE29FBFD61005A9562 /* Const.swift */; };
 		204CBD402A01737D00BF412F /* OrderedMDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD3F2A01737D00BF412F /* OrderedMDFileManager.swift */; };
+		204CBD472A05562F00BF412F /* OpenDocumentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD422A05562F00BF412F /* OpenDocumentPresenter.swift */; };
+		204CBD482A05562F00BF412F /* OpenDocumentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD432A05562F00BF412F /* OpenDocumentModels.swift */; };
+		204CBD492A05562F00BF412F /* OpenDocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD442A05562F00BF412F /* OpenDocumentAssembler.swift */; };
+		204CBD4A2A05562F00BF412F /* OpenDocumentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD452A05562F00BF412F /* OpenDocumentInteractor.swift */; };
+		204CBD4B2A05562F00BF412F /* OpenDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD462A05562F00BF412F /* OpenDocumentViewController.swift */; };
+		204CBD4E2A05626800BF412F /* OpenDocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204CBD4D2A05626800BF412F /* OpenDocumentTableViewCell.swift */; };
 		20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8378D29F191F8005022B0 /* StartPresenter.swift */; };
 		20F8379629F191F8005022B0 /* StartModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379029F191F8005022B0 /* StartModels.swift */; };
 		20F8379729F191F8005022B0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8379129F191F8005022B0 /* StartViewController.swift */; };
@@ -71,6 +77,12 @@
 		2032F1FC29FBFD0D005A9562 /* ForTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ForTests; sourceTree = "<group>"; };
 		2032F1FE29FBFD61005A9562 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		204CBD3F2A01737D00BF412F /* OrderedMDFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMDFileManager.swift; sourceTree = "<group>"; };
+		204CBD422A05562F00BF412F /* OpenDocumentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDocumentPresenter.swift; sourceTree = "<group>"; };
+		204CBD432A05562F00BF412F /* OpenDocumentModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDocumentModels.swift; sourceTree = "<group>"; };
+		204CBD442A05562F00BF412F /* OpenDocumentAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDocumentAssembler.swift; sourceTree = "<group>"; };
+		204CBD452A05562F00BF412F /* OpenDocumentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDocumentInteractor.swift; sourceTree = "<group>"; };
+		204CBD462A05562F00BF412F /* OpenDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDocumentViewController.swift; sourceTree = "<group>"; };
+		204CBD4D2A05626800BF412F /* OpenDocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDocumentTableViewCell.swift; sourceTree = "<group>"; };
 		20F8378D29F191F8005022B0 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		20F8379029F191F8005022B0 /* StartModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModels.swift; sourceTree = "<group>"; };
 		20F8379129F191F8005022B0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -192,10 +204,32 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		204CBD412A0555D000BF412F /* OpenDocumentScene */ = {
+			isa = PBXGroup;
+			children = (
+				204CBD4C2A05624000BF412F /* Cells */,
+				204CBD442A05562F00BF412F /* OpenDocumentAssembler.swift */,
+				204CBD452A05562F00BF412F /* OpenDocumentInteractor.swift */,
+				204CBD432A05562F00BF412F /* OpenDocumentModels.swift */,
+				204CBD422A05562F00BF412F /* OpenDocumentPresenter.swift */,
+				204CBD462A05562F00BF412F /* OpenDocumentViewController.swift */,
+			);
+			path = OpenDocumentScene;
+			sourceTree = "<group>";
+		};
+		204CBD4C2A05624000BF412F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				204CBD4D2A05626800BF412F /* OpenDocumentTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		20F8376629F187F1005022B0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				20F8376729F1880A005022B0 /* StartScene */,
+				204CBD412A0555D000BF412F /* OpenDocumentScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -406,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F8379629F191F8005022B0 /* StartModels.swift in Sources */,
+				204CBD492A05562F00BF412F /* OpenDocumentAssembler.swift in Sources */,
 				20F837A929F6E1F8005022B0 /* Colours.swift in Sources */,
 				20F8379829F191F8005022B0 /* StartInteractor.swift in Sources */,
 				20F8379729F191F8005022B0 /* StartViewController.swift in Sources */,
@@ -415,17 +450,22 @@
 				2032F1FB29FBCC24005A9562 /* File+CustomStringConvertible.swift in Sources */,
 				200956A129EFE0FE00C7A354 /* SceneDelegate.swift in Sources */,
 				20F837A029F6D64A005022B0 /* UIViewController+Preview.swift in Sources */,
+				204CBD4B2A05562F00BF412F /* OpenDocumentViewController.swift in Sources */,
 				204CBD402A01737D00BF412F /* OrderedMDFileManager.swift in Sources */,
 				2032F1E829FAB9E4005A9562 /* MDFileManager.swift in Sources */,
 				20F837AC29F6E25B005022B0 /* UIColor+Hex.swift in Sources */,
 				20F837A629F6E11D005022B0 /* Assets.swift in Sources */,
 				20F8379329F191F8005022B0 /* StartPresenter.swift in Sources */,
 				20F837B529F827ED005022B0 /* File.swift in Sources */,
+				204CBD4A2A05562F00BF412F /* OpenDocumentInteractor.swift in Sources */,
+				204CBD482A05562F00BF412F /* OpenDocumentModels.swift in Sources */,
 				20F8379A29F19434005022B0 /* StartAssembler.swift in Sources */,
+				204CBD472A05562F00BF412F /* OpenDocumentPresenter.swift in Sources */,
 				20F837B229F6E6CE005022B0 /* StartCollectionViewCell.swift in Sources */,
 				20F837AF29F6E3E9005022B0 /* Sizes.swift in Sources */,
 				20F837AD29F6E25B005022B0 /* UIColor+Dynamic.swift in Sources */,
 				20F837A529F6E11D005022B0 /* Strings.swift in Sources */,
+				204CBD4E2A05626800BF412F /* OpenDocumentTableViewCell.swift in Sources */,
 				20F837A229F6DBFB005022B0 /* AccessibilityIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

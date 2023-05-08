@@ -47,6 +47,8 @@ class StartInteractor: IStartInteractor, IStartDataStore {
 	}
 
 	func openDocumentAction() {
+		/// TODO: Add Coordinator
+		/// OpenDocumentAssembler().assembly()
 	}
 
 	func aboutAppAction() {
