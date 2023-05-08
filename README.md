@@ -1,3 +1,5 @@
+[![Tuist badge](https://img.shields.io/badge/Powered%20by-Tuist-blue)](https://tuist.io)
+
 # MdEditor
 
 **MdEditor** - это простой текстовый редактор с поддержкой язык разметки Markdown.
@@ -16,24 +18,26 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Скачайте и установите SwiftLint - утилиту для автоматической проверки Swift-кода
+- Скачайте и установите Tuist - is a command line tool (CLI) that aims to facilitate the generation, maintenance, and interaction with Xcode projects.
 ```
-brew install swiftlint
+curl -Ls https://install.tuist.io | bash
 ```
-- Скачайте и установите SwiftGen - инструмент для автоматической кодогенерации ресурсов проекта в Swift-код, чтобы сделать их типобезопасными в использовании
-```
-brew install swiftgen
-```
+
 
 - Клонируйте репозиторий
 ```
 cd ~/Developer
 git clone https://github.com/ChervotkinaTeam/MdEditor.git
 cd ./MdEditor
-xed .
+tuist fetch
+tuist generate
 ```
 
-- Запустите файл MdEditor.xcodeproj
+- Cгенерируйте фалы проекта Xcode
+```
+tuist fetch
+tuist generate
+```
 
 ## Features
 
@@ -43,5 +47,4 @@ xed .
 - Написано на Swift 5;
 - Поддерживается версия iOS 14;
 - Необходим Xcode 14+;
-- SwiftLint;
-- SwiftGen.
+- Tuist;
