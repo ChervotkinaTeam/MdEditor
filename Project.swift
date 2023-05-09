@@ -1,7 +1,7 @@
 import ProjectDescription
 
 let swiftLintScriptBody = "SwiftLint/swiftlint"
-let swiftLintScript = TargetScript.post(script: swiftLintScriptBody, name: "SwiftLint")
+var swiftLintScript = TargetScript.post(script: swiftLintScriptBody, name: "SwiftLint", basedOnDependencyAnalysis: false)
 var scripts = [swiftLintScript]
 
 let target = Target(
