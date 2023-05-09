@@ -1,8 +1,8 @@
+[![Tuist badge](https://img.shields.io/badge/Powered%20by-Tuist-blue)](https://tuist.io)
+
 # MdEditor
 
 **MdEditor** - это простой текстовый редактор с поддержкой язык разметки Markdown.
-
-[![Tuist badge](https://img.shields.io/badge/Powered%20by-Tuist-blue)](https://tuist.io)
 
 В проекте используются следующие шаблоны проектирования:
 - DI
