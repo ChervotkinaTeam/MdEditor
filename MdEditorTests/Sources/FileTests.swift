@@ -10,8 +10,9 @@ import XCTest
 
 final class FileTests: XCTestCase {
 
-	private let fileName = "README.md"
-	private let fileSize: UInt64 = 1488
+	private let fileNameReadmeMd = "README.md"
+	private let fileNameInfoPlist = "Info.plist"
+	private let fileSize: UInt64 = 1408
 
 	func test_initDir_name_shouldBeAppName() {
 
@@ -38,23 +39,23 @@ final class FileTests: XCTestCase {
 		)
 	}
 
-	func test_initFile_name_shouldBeInfoPlist() {
+	func test_file_name_shouldBeInfoPlist() {
 
 		// arrange
-		let sut = makeFileSUT()
+		let sut = makeFileSUT(fileName: fileNameInfoPlist)
 
 		// assert
 		XCTAssertEqual(
 			sut.name,
-			fileName,
-			"Неверное имя файла, имя должно быть \(fileName))"
+			fileNameInfoPlist,
+			"Неверное имя файла, имя должно быть \(fileNameInfoPlist))"
 		)
 	}
 
-	func test_initFile_isDirectory_shouldBeFalse() {
+	func test_file_isDirectory_shouldBeFalse() {
 
 		// arrange
-		let sut = makeFileSUT()
+		let sut = makeFileSUT(fileName: fileNameInfoPlist)
 
 		// assert
 		XCTAssertFalse(
@@ -63,23 +64,23 @@ final class FileTests: XCTestCase {
 		)
 	}
 
-	func test_initFile_extension_shouldBePlist() {
+	func test_file_extension_shouldBePlist() {
 
 		// arrange
-		let sut = makeFileSUT()
+		let sut = makeFileSUT(fileName: fileNameInfoPlist)
 
 		// assert
 		XCTAssertEqual(
 			sut.ext,
-			"md",
-			"Должен быть md"
+			"plist",
+			"Расширение файла должно быть plist"
 		)
 	}
 
-	func test_initFile_size_shouldBe1488() {
+	func test_file_size_shouldBe1408() {
 
 		// arrange
-		let sut = makeFileSUT()
+		let sut = makeFileSUT(fileName: fileNameInfoPlist)
 
 		// assert
 		XCTAssertEqual(
@@ -98,7 +99,7 @@ private extension FileTests {
 		return File(url: url)
 	}
 
-	private func makeFileSUT() -> File {
+	private func makeFileSUT(fileName: String) -> File {
 		let url = Bundle.main.bundleURL
 		return File(url: url.appendingPathComponent(fileName))
 	}
