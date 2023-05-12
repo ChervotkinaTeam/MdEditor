@@ -16,7 +16,11 @@ let target = Target(
 	),
 	infoPlist: "MdEditor/SupportingFiles/Info.plist",
 	sources: ["MdEditor/Sources/**"],
-	resources: ["MdEditor/Resources/**"],
+	resources: [
+		"MdEditor/Resources/**"
+		, .folderReference(path: "MdEditor/Assets/Examples")
+		, .folderReference(path: "MdEditor/Assets/ForTests")
+	],
 	scripts: scripts,
 	dependencies: [
 		.external(name: "PinLayout")
